@@ -5,7 +5,7 @@ import {isAuthenticated} from "../middlewares/isAuthenticated";
 
 const router = express.Router();
 
-router.route("/").post(isAuthenticated, upload.single("imageFile"), createRestaurant);
+router.route("/").post(upload.single("imageFile"), createRestaurant);
 router.route("/").get(isAuthenticated, getRestaurant);
 router.route("/").put(isAuthenticated, upload.single("imageFile"), updateRestaurant);
 router.route("/order").get(isAuthenticated,  getRestaurantOrder);
